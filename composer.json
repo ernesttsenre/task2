@@ -1,0 +1,22 @@
+{
+  "name": "oivanov/task2",
+  "authors": [
+    {
+      "name": "Иванов Олег",
+      "email": "ernest.oleg.iv@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Ernesttsenre\\CommentService\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.5.9"
+  }
+}
