@@ -24,6 +24,21 @@ $provider->create(new Comment(...));
 $provider->update(new Comment(...));
 ```
 
+Использование в качестве пакета
+```json
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/ernesttsenre/task2"
+    }
+  ],
+  "require": {
+    "oivanov/task2": "dev-master"
+  }
+}
+```
+
 ```bash
 # Сборка
 composer install
