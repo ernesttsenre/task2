@@ -3,6 +3,7 @@
 namespace Ernesttsenre\CommentService\Components;
 
 use GuzzleHttp\Client;
+use Psr\Http\Message\ResponseInterface;
 
 class ApiClient
 {
@@ -17,7 +18,7 @@ class ApiClient
     {
         $response = $this->client->request('GET', $path);
 
-        return json_decode((string) $response->getBody(), true);
+        return $this->convertResponseJsonToArray($response);
     }
 
     public function post(string $path, array $body): array
@@ -26,7 +27,7 @@ class ApiClient
             'form_params' => $body
         ]);
 
-        return json_decode((string) $response->getBody(), true);
+        return $this->convertResponseJsonToArray($response);
     }
 
     public function put(string $path, array $body): array
@@ -35,6 +36,11 @@ class ApiClient
             'form_params' => $body
         ]);
 
+        return $this->convertResponseJsonToArray($response);
+    }
+
+    private function convertResponseJsonToArray(ResponseInterface $response): array
+    {
         return json_decode((string) $response->getBody(), true);
     }
 }
