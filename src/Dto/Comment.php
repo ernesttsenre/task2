@@ -30,15 +30,6 @@ class Comment
         return $this->text;
     }
 
-    public function serializeToArray(): array
-    {
-        return [
-            'id' => $this->getId(),
-            'name' => $this->getName(),
-            'text' => $this->getText(),
-        ];
-    }
-
     public function isNew(): bool
     {
         return $this->id === null;
